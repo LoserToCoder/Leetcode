@@ -1,0 +1,771 @@
+@charset "UTF-8";
+.image-package .image-container {
+	position: relative;
+	z-index: 2;
+	background-color: #eee;
+	-webkit-transition: background-color .1s linear;
+	-o-transition: background-color .1s linear;
+	transition: background-color .1s linear;
+	margin: 0 auto
+}
+
+body.reader-night-mode .image-package .image-container {
+	background-color: #545454
+}
+
+.image-package .image-container-fill {
+	z-index: 1
+}
+
+.image-package .image-container .image-view {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden
+}
+
+.image-package .image-container .image-view-error:after {
+	content: "图片获取失败，请点击重试";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	color: #888;
+	font-size: 14px
+}
+
+.image-package .image-container .image-view img.image-loading {
+	opacity: .3
+}
+
+.image-package .image-container .image-view img {
+	-webkit-transition: all .15s linear;
+	-o-transition: all .15s linear;
+	transition: all .15s linear;
+	z-index: 2;
+	opacity: 1
+}
+
+<!--打赏-->.reward-note-modal .v-modal {
+	width: 620px;
+	text-align: center;
+}
+
+.reward-note-modal .v-modal form {
+	margin: 0 auto 25px auto;
+	padding: 0 40px;
+}
+
+.reward-note-modal .v-modal .reward-intro {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 16px;
+}
+
+.reward-note-modal .v-modal .reward-intro .avatar {
+	cursor: default !important;
+	width: 36px;
+	height: 36px;
+	margin-right: 10px;
+	display: inline-block;
+}
+
+.reward-note-modal .v-modal .reward-intro .intro {
+	margin-right: 5px;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+.reward-note-modal .v-modal .reward-intro i {
+	color: #EA6F5A;
+	vertical-align: middle;
+}
+
+.reward-note-modal .v-modal .main-inputs {
+	margin: 25px 0;
+}
+
+.reward-note-modal .v-modal .main-inputs .amount-group {
+	margin: 0 -5px;
+}
+
+.reward-note-modal .v-modal .main-inputs .amount-group input {
+	display: none;
+}
+
+.reward-note-modal .v-modal .main-inputs .amount-group input:checked+.option {
+	color: #EA6F5A;
+	border-color: #EA6F5A;
+}
+
+.reward-note-modal .v-modal .main-inputs .amount-group .custom-amount:checked+.option .custom-text {
+	opacity: 0;
+}
+
+.reward-note-modal .v-modal .main-inputs .amount-group .custom-amount:checked+.option .custom-amount-input {
+	opacity: 1;
+}
+
+.reward-note-modal .v-modal .main-inputs .amount-group .option {
+	position: relative;
+	margin: 0 5px 15px;
+	width: 156px;
+	height: 56px;
+	line-height: 54px;
+	border: 1px solid #E6E6E6;
+	border-radius: 4px;
+	font-weight: normal;
+	color: #999999;
+	cursor: pointer;
+}
+
+.reward-note-modal .v-modal .main-inputs .amount-group .option i {
+	font-size: 16px;
+	vertical-align: middle;
+}
+
+.reward-note-modal .v-modal .main-inputs .amount-group .option .amount {
+	font-size: 28px;
+	vertical-align: middle;
+}
+
+.reward-note-modal .v-modal .main-inputs .amount-group .option .piece {
+	font-size: 13px;
+	vertical-align: sub;
+}
+
+.reward-note-modal .v-modal .main-inputs .amount-group .option .custom-amount-input {
+	position: absolute;
+	top: 0;
+	z-index: -1;
+	width: 100%;
+	opacity: 0;
+}
+
+.reward-note-modal .v-modal .main-inputs .amount-group .option .custom-amount-input i {
+	position: absolute;
+	top: 0;
+	left: 10px;
+}
+
+.reward-note-modal .v-modal .main-inputs .amount-group .option .custom-amount-input .piece {
+	position: absolute;
+	top: 4px;
+	right: 10px;
+}
+
+.reward-note-modal .v-modal .main-inputs .amount-group .option .custom-amount-input input {
+	display: block;
+	margin: 0 auto;
+	width: 80px;
+	height: 54px;
+	line-height: 54px;
+	border: none;
+	font-size: 28px;
+	text-align: center;
+	background: transparent;
+	-moz-appearance: textfield;
+}
+
+.reward-note-modal .v-modal .main-inputs .amount-group .option .custom-amount-input input::-webkit-outer-spin-button,
+.reward-note-modal .v-modal .main-inputs .amount-group .option .custom-amount-input input::-webkit-inner-spin-button {
+	-webkit-appearance: none !important;
+}
+
+.reward-note-modal .v-modal .main-inputs .message {
+	padding: 15px 20px;
+	margin-bottom: 0;
+	font-size: 14px;
+	border: 1px solid #E6E6E6;
+	color: #333333;
+	border-radius: 4px;
+	background-color: rgba(180, 180, 180, 0.1);
+}
+
+.reward-note-modal .v-modal .main-inputs .message textarea {
+	width: 100%;
+	height: 44px;
+	padding: 0;
+	margin: 0;
+	resize: none;
+	background: none !important;
+	border: none !important;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.reward-note-modal .v-modal .main-inputs .message textarea:focus {
+	outline: none;
+}
+
+.reward-note-modal .v-modal .reward-info .amount {
+	font-size: 28px;
+	font-weight: bold;
+	color: #EA6F5A;
+}
+
+.reward-note-modal .v-modal .reward-info .pay-method {
+	font-size: 14px;
+}
+
+.reward-note-modal .v-modal .reward-info .pay-method a {
+	color: #3194D0;
+}
+
+.reward-note-modal .v-modal .choose-pay {
+	margin: 0 -5px;
+}
+
+.reward-note-modal .v-modal .choose-pay input {
+	display: none;
+}
+
+.reward-note-modal .v-modal .choose-pay input:checked+.option {
+	color: #EA6F5A;
+	border-color: #EA6F5A;
+}
+
+.reward-note-modal .v-modal .choose-pay .option {
+	margin: 20px 5px 10px;
+	width: 156px;
+	height: 56px;
+	line-height: 54px;
+	text-align: center;
+	border: 1px solid #E6E6E6;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.reward-note-modal .v-modal .choose-pay .option img {
+	height: 30px;
+}
+
+.reward-note-modal .v-modal .choose-pay .option img.day.alipay,
+.reward-note-modal .v-modal .choose-pay .option img.night.alipay {
+	min-width: 85px;
+}
+
+.reward-note-modal .v-modal .choose-pay .option img.day.wechat,
+.reward-note-modal .v-modal .choose-pay .option img.night.wechat {
+	min-width: 112px;
+}
+
+.reward-note-modal .v-modal .choose-pay .option img.night {
+	display: none;
+}
+
+body.reader-night-mode .reward-note-modal .v-modal .choose-pay .option img.night {
+	display: inline-block;
+}
+
+body.reader-night-mode .reward-note-modal .v-modal .choose-pay .option img.day {
+	display: none;
+}
+
+.reward-note-modal .v-modal .choose-pay .tooltip {
+	width: 230px;
+}
+
+.reward-note-modal .v-modal .modal-footer {
+	padding: 0 15px 20px;
+	border: none;
+	background-color: transparent;
+	text-align: center;
+}
+
+.reward-note-modal .v-modal .modal-footer .btn {
+	padding: 8px 45px;
+	font-size: 24px;
+}
+
+.reward-note-modal .v-modal .btn-pay {
+	padding: 8px 25px;
+	font-size: 16px;
+	color: #ffffff;
+	background-color: #F5A623;
+}
+
+.weixin-pay,
+.success-pay {
+	text-align: center;
+}
+
+.weixin-pay .v-modal,
+.success-pay .v-modal {
+	width: 350px;
+}
+
+.weixin-pay .ic-successed,
+.success-pay .ic-successed {
+	font-size: 60px;
+	color: #3db922;
+}
+
+.weixin-pay h2,
+.weixin-pay h3,
+.success-pay h2,
+.success-pay h3 {
+	margin-bottom: 20px;
+	color: #333333;
+}
+
+.weixin-pay h2,
+.success-pay h2 {
+	margin: 0 0 40px 0;
+	font-size: 24px;
+}
+
+.weixin-pay .bind-text,
+.success-pay .bind-text {
+	position: relative;
+	margin-bottom: 30px;
+	font-size: 14px;
+	color: #999999;
+}
+
+.weixin-pay .bind-text:before,
+.weixin-pay .bind-text:after,
+.success-pay .bind-text:before,
+.success-pay .bind-text:after {
+	content: "";
+	border-top: 1px solid #999;
+	display: block;
+	position: absolute;
+	width: 40px;
+	top: 8px;
+}
+
+.weixin-pay .bind-text:before,
+.success-pay .bind-text:before {
+	left: 30px;
+}
+
+.weixin-pay .bind-text:after,
+.success-pay .bind-text:after {
+	right: 30px;
+}
+
+.weixin-pay .share-bind,
+.success-pay .share-bind {
+	display: block;
+	margin-bottom: 30px;
+}
+
+.weixin-pay .share-bind i,
+.success-pay .share-bind i {
+	margin-right: 4px;
+	font-size: 22px;
+	vertical-align: middle;
+}
+
+.weixin-pay .share-bind.wechat i,
+.success-pay .share-bind.wechat i {
+	color: #00BB29;
+}
+
+.weixin-pay .share-bind.weibo i,
+.success-pay .share-bind.weibo i {
+	color: #E05244;
+}
+
+.weixin-pay .wx-qr-code,
+.success-pay .wx-qr-code {
+	display: inline-block;
+}
+
+.weixin-pay .wx-qr-code img,
+.success-pay .wx-qr-code img {
+	margin: 0 auto;
+	padding: 10px;
+	width: 200px;
+	background-color: #ffffff;
+}
+
+.weixin-pay .pay-amount,
+.success-pay .pay-amount {
+	margin: 20px 0;
+	color: #787878;
+}
+
+.weixin-pay .pay-amount span,
+.success-pay .pay-amount span {
+	color: #F5A623;
+}
+<!--打赏模块的·开始-->
+@charset "UTF-8";
+/*
+ * 变量
+*/
+.v-modal-wrap {
+	position: relative;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 9999;
+	background-color: transparent;
+}
+.v-modal-wrap.modal-leave-active {
+	-webkit-transition: opacity 0.3s;
+	-o-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+.v-modal-wrap.modal-enter-active .v-modal-mask, .v-modal-wrap.modal-leave-active .v-modal-mask {
+	opacity: 0;
+}
+.v-modal-wrap.modal-enter-active .v-modal, .v-modal-wrap.modal-leave-active .v-modal {
+	-webkit-transform: translate(-50%, -70%);
+	-ms-transform: translate(-50%, -70%);
+	transform: translate(-50%, -70%);
+	opacity: 0;
+}
+.v-modal-wrap .v-modal-mask {
+	background-color: rgba(255, 255, 255, 0.7);
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	-webkit-transition: opacity 0.3s;
+	-o-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+	opacity: 1;
+}
+.v-modal-wrap .v-modal {
+	position: fixed;
+	left: 50%;
+	top: 55%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	border-radius: 6px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	background-color: #fff;
+	-webkit-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, -webkit-transform 0.3s;
+	-o-transition: opacity 0.3s, transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s, -webkit-transform 0.3s;
+	opacity: 1;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	overflow: hidden;
+	/**
+	  z-index  可以上元素在页面层面之上
+	 */
+	z-index: 999;
+}
+.v-modal-wrap .v-modal > header:before, .v-modal-wrap .v-modal > header:after, .v-modal-wrap .v-modal > main:before, .v-modal-wrap .v-modal > main:after, .v-modal-wrap .v-modal > footer:before, .v-modal-wrap .v-modal > footer:after {
+	content: '';
+	clear: both;
+	display: table;
+}
+.v-modal-wrap .v-modal > header {
+	padding: 20px;
+	border-bottom: 1px solid #F0F0F0;
+}
+.v-modal-wrap .v-modal > header h4 {
+	margin: 0;
+	color: #333;
+	text-align: left;
+}
+.v-modal-wrap .v-modal .close {
+	position: absolute;
+	right: 16px;
+	top: 20px;
+	font-size: 26px;
+	line-height: 20px;
+	color: rgba(0, 0, 0, 0.8);
+}
+.v-modal-wrap .v-modal .close:hover {
+	color: #000000;
+}
+.v-modal-wrap .v-modal > main {
+	padding: 20px 20px 20px 20px;
+	font-size: 15px;
+	color: #333;
+	-webkit-box-flex: 1;
+	-webkit-flex-grow: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.v-modal-wrap .v-modal > footer {
+	padding: 20px;
+	background-color: #fff;
+}
+.v-modal-wrap .v-modal > footer button {
+	padding: 0;
+	margin: 0;
+	background-color: transparent;
+	border: 0;
+	float: right;
+}
+.v-modal-wrap .v-modal > footer button:focus {
+	outline: 0;
+}
+.v-modal-wrap .v-modal > footer .submit {
+	padding: 4px 12px;
+	border: 1px solid;
+	border-radius: 20px;
+}
+.v-modal-wrap .v-modal > footer .cancel {
+	margin-top: 5px;
+}
+.v-modal-wrap .v-modal > footer .cancel:hover {
+	color: #333333;
+}
+.reader-night-mode .v-modal-wrap .v-modal-mask {
+	background-color: rgba(63, 63, 63, 0.7);
+}
+.reader-night-mode .v-modal-wrap .v-modal {
+	background-color: #3f3f3f;
+}
+.reader-night-mode .v-modal-wrap .v-modal header {
+	border-color: #2F2F2F;
+}
+.reader-night-mode .v-modal-wrap .v-modal header h4 {
+	color: #C8C8C8;
+}
+.reader-night-mode .v-modal-wrap .v-modal .close {
+	color: #C8C8C8;
+}
+.reader-night-mode .v-modal-wrap .v-modal .close:hover {
+	color: #ffffff;
+}
+.reader-night-mode .v-modal-wrap .v-modal main {
+	color: #C8C8C8;
+}
+.reader-night-mode .v-modal-wrap .v-modal footer {
+	background-color: #3f3f3f;
+}
+.reader-night-mode .v-modal-wrap .v-modal footer .cancel:hover {
+	color: #C8C8C8;
+}
+<!--打赏模块结束-->
+
+
+<!--喜欢按钮-->.like[data-v-6ddd02c6] {
+	display: inline-block;
+}
+
+.like .like-group[data-v-6ddd02c6] {
+	position: relative;
+	padding: 13px 0 15px 0;
+	font-size: 0;
+	border: 1px solid #EA6F5A;
+	border-radius: 40px;
+}
+
+.like .like-group[data-v-6ddd02c6]:hover {
+	background-color: rgba(236, 97, 73, 0.05);
+}
+
+.like .like-group .btn-like[data-v-6ddd02c6] {
+	display: inline-block;
+	font-size: 19px;
+}
+
+.like .like-group .btn-like[data-v-6ddd02c6]:before {
+	content: '';
+	position: absolute;
+	left: 12px;
+	top: 2px;
+	width: 50px;
+	height: 50px;
+	background-position: left;
+	background-repeat: no-repeat;
+	background-size: 1000px 50px;
+}
+
+.like .like-group .btn-like a[data-v-6ddd02c6] {
+	position: relative;
+	padding: 18px 30px 18px 55px;
+	color: #EA6F5A;
+}
+
+.like .like-group .modal-wrap[data-v-6ddd02c6] {
+	font-size: 18px;
+	border-left: 1px solid rgba(236, 97, 73, 0.4);
+	display: inline-block;
+	margin-left: -15px;
+}
+
+.like .like-group .modal-wrap a[data-v-6ddd02c6] {
+	color: #EA6F5A;
+	padding: 18px 26px 18px 18px;
+}
+
+.like .like-group.like-animation[data-v-6ddd02c6],
+.like .like-group.active[data-v-6ddd02c6] {
+	background-color: #EA6F5A;
+}
+
+.like .like-group.like-animation .btn-like a[data-v-6ddd02c6],
+.like .like-group.active .btn-like a[data-v-6ddd02c6] {
+	color: white;
+}
+
+.like .like-group.like-animation .modal-wrap[data-v-6ddd02c6],
+.like .like-group.active .modal-wrap[data-v-6ddd02c6] {
+	border-left: 1px solid white;
+}
+
+.like .like-group.like-animation .modal-wrap a[data-v-6ddd02c6],
+.like .like-group.active .modal-wrap a[data-v-6ddd02c6] {
+	color: white;
+}
+
+.like .like-group.like-animation .btn-like[data-v-6ddd02c6]:before {
+	-webkit-animation: likeBlast-data-v-6ddd02c6 0.6s 1 steps(19);
+	animation: likeBlast-data-v-6ddd02c6 0.6s 1 steps(19);
+	background-position: right;
+}
+
+@-webkit-keyframes likeBlast {
+	0% {
+		background-position: left;
+	}
+	100% {
+		background-position: right;
+	}
+}
+
+@keyframes likeBlast-data-v-6ddd02c6 {
+	0% {
+		background-position: left;
+	}
+	100% {
+		background-position: right;
+	}
+}
+
+.like .like-group.active .btn-like[data-v-6ddd02c6]:before {
+	background-position: right;
+}
+
+<!--评论样式-->#featured-comment-list {
+	margin-top: 30px;
+	margin-bottom: -15px;
+}
+
+.v-tooltip-container,
+.v-tooltip-content {
+	display: inline-block;
+}
+
+.v-tooltip-container {
+	position: relative;
+}
+
+.v-tooltip-container .v-tooltip-content {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.v-tooltip-container .v-tooltip-wrap {
+	position: absolute;
+}
+
+.v-tooltip-container .v-tooltip-wrap.v-tooltip-wrap-top {
+	bottom: 100%;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+	padding-bottom: 10px;
+}
+
+.v-tooltip-container .v-tooltip-wrap.v-tooltip-wrap-bottom {
+	top: 100%;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+	padding-top: 10px;
+}
+
+.v-tooltip-container .v-tooltip-wrap.v-tooltip-wrap-left {
+	top: 50%;
+	right: 100%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	padding-right: 10px;
+}
+
+.v-tooltip-container .v-tooltip-wrap.v-tooltip-wrap-right {
+	top: 50%;
+	left: 100%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	padding-left: 10px;
+}
+
+.v-tooltip-container .v-tooltip-wrap.v-tooltip-wrap-top-start {
+	bottom: 100%;
+	left: 0;
+	padding-bottom: 10px;
+}
+
+.v-tooltip-container .v-tooltip-wrap.v-tooltip-wrap-top-end {
+	bottom: 100%;
+	right: 0;
+	padding-bottom: 10px;
+}
+
+.v-tooltip-container .v-tooltip-wrap.v-tooltip-wrap-bottom-start {
+	top: 100%;
+	left: 0;
+	padding-top: 10px;
+}
+
+.v-tooltip-container .v-tooltip-wrap.v-tooltip-wrap-bottom-end {
+	top: 100%;
+	right: 0;
+	padding-top: 10px;
+}
+
+.v-tooltip-container .v-tooltip-wrap.v-tooltip-wrap-left-start {
+	top: 0;
+	right: 100%;
+	padding-right: 10px;
+}
+
+.v-tooltip-container .v-tooltip-wrap.v-tooltip-wrap-left-end {
+	bottom: 0;
+	right: 100%;
+	padding-right: 10px;
+}
+
+.v-tooltip-container .v-tooltip-wrap.v-tooltip-wrap-right-start {
+	top: 0;
+	left: 100%;
+	padding-left: 10px;
+}
+
+.v-tooltip-container .v-tooltip-wrap.v-tooltip-wrap-right-end {
+	bottom: 0;
+	left: 100%;
+	padding-left: 10px;
+}

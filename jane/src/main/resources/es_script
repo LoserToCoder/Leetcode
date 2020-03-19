@@ -1,0 +1,46 @@
+POST goods/items/VfLKWWgB5Gj3L4fm1KIm/_update
+{
+  "doc": {
+    "scene":"海岛度假旅行,早晨必备围巾避寒"
+  }
+}
+curl -XPOST "http://192.168.149.134:9200/goods/items/VfLKWWgB5Gj3L4fm1KIm/_update" -H 'Content-Type: application/json' -d'
+{
+  "doc": {
+    "scene":"海岛度假旅行,早晨必备围巾避寒"
+  }
+}'
+
+curl -XPOST "http://192.168.149.134:9200/ishare/articles/J3sAU2gBZc3HQwmUqGUO/_update" -H 'Content-Type: application/json' -d'
+{
+  "script" : {
+    "source": "ctx._source.view_counts += params.count",
+    "lang": "painless",
+    "params" : {
+      "count" : 4
+    }
+  }
+}'
+curl -XGET "http://192.168.149.134:9200/ishare/articles/EDo9XmgBypB4wBHK5YZX"
+curl -XPOST "http://192.168.149.134:9200/ishare/articles/DXsAU2gBZc3HQwmUpmUJ/_update" -H 'Content-Type: application/json' -d'
+{
+    "doc": {
+    "view_counts":1
+    }
+}'
+
+
+curl -XDELETE "http://192.168.133.130:9200/ishare/articles/lDCUmGgBeRilwVpw9Jzd"
+
+curl -XPOST "http://192.168.149.134:9200/ishare/articles/Fjo9XmgBypB4wBHK5YbT/_update" -H 'Content-Type: application/json' -d'
+{
+  "doc": {
+    "view_counts":5000
+  }
+}'
+ES导入数据,数据的格式出现问题,数字格式要严格的数字格式,否则一旦使用脚本更新就会会错,{它是按照字符串的方式叠加,而不是数值那样的递增}
+
+//batched_reduce_size
+//减少批量处理的大小
+批量缩小尺度
+endpoint--终点
