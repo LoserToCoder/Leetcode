@@ -17,12 +17,11 @@ public class Test {
         //FutureTask
         //ThreadPoolExecutor
         //CompletableFuture
-     /*   StringBuilder sb = new StringBuilder();
+       StringBuilder sb = new StringBuilder();
         sb.append("@@@@@");
         System.out.println(sb.toString());
         sb.delete(0, sb.length()-1);
-        System.out.println(sb.toString());*/
-
+        System.out.println(sb.toString());
         Test test = new Test();
         int []nums={16,16,18,24,30,32};
         int target=48;
