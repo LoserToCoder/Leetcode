@@ -56,19 +56,19 @@ public class RestoreIPAddresses {
     }
 
     public static void main(String[] args) {
-        long t1 = System.currentTimeMillis(),t2=0,total=0;
+
         RestoreIPAddresses restoreIPAddresses = new RestoreIPAddresses();
         String []ips={"19216811","25525511135","1111318633","1123411331","111135746","18248107165","106131216","4795162193","1111329129"};
+        long t1 = System.currentTimeMillis();
         for(String ip:ips){
-           List<String> ipAddresses = restoreIPAddresses.restoreIpAddresses(ip);
-           t2 = System.currentTimeMillis();
-           total+=(t2-t1);
+
+          List<String> ipAddresses = restoreIPAddresses.restoreIpAddresses(ip);
           for (String s : ipAddresses) {
             System.out.println(s);
           }
-          t1=System.currentTimeMillis();
         }
-        System.out.printf("%d个测试案例/总耗时%dms",ips.length,total);
+        long t2 = System.currentTimeMillis();
+        System.out.printf("%d个测试案例/总耗时%dms",ips.length,t2-t1);
 
     }
 }
