@@ -2,7 +2,6 @@ package com.leetcode.linklist;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.Map;
 
 public class MinimumDistanceBstNodes {
 
@@ -59,5 +58,25 @@ public class MinimumDistanceBstNodes {
             node = node.left;
         }
         return node;
+    }
+
+
+    Deque<Integer> stack = new ArrayDeque<>();
+    int minDiff = Integer.MAX_VALUE;
+    public int getMinimumDifference(TreeNode root) {
+        recursion(root);
+        return minDiff;
+    }
+    private void recursion(TreeNode node){
+
+        if(node!=null){
+            recursion(node.left);
+            if(!stack.isEmpty()){
+              minDiff =Math.min(node.val- stack.pop(),minDiff);
+            }
+            stack.push(node.val);
+            recursion(node.right);
+        }
+
     }
 }
