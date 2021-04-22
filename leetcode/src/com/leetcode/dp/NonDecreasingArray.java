@@ -23,26 +23,7 @@ public class NonDecreasingArray {
     public boolean checkPossibility(int[] nums) {
 
         if(nums.length<3) return true;
-        /*Map<Integer, Integer> map = new HashMap<>();
-        for(int i=1;i<nums.length-1;i++){
-
-            int num1 = map.getOrDefault(i - 1, nums[i - 1]);
-            int num2 = map.getOrDefault(i, nums[i]);
-            int num3 = map.getOrDefault(i + 1, nums[i + 1]);
-            if(num1<=num3&&(num3<num2||num2<num1)){
-                map.put(i, num3);
-            }else if(num1>num3){
-                if(num3>=num2){
-                    map.put(i - 1, num2);
-                }else if(num1<=num2){
-                    map.put(i + 1, num2);
-                }
-            }
-            if(map.size()>1||(num1>num2&&num2>num3)) return false;
-
-        }*/
         int cn=0;
-
         for(int i=1;i<nums.length-1;i++){
 
             if(nums[i-1]<=nums[i+1]&&(nums[i+1]<nums[i]||nums[i]<nums[i-1])){
