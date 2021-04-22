@@ -16,7 +16,7 @@ public class SortedArraySum {
      * 输出：[10,30] 或者 [30,10]
      * 限制：
      * 1 <= nums.length <= 10^5
-     * 1 <= nums[i] <= 10^6
+     * 1 <= nums[i]<= 10^6
      * 链接：https://leetcode-cn.com/problems/he-wei-sde-liang-ge-shu-zi-lcof
      * @param nums
      * @param target

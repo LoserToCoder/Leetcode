@@ -3,7 +3,7 @@ package com.leetcode.bits;
 public class PowerOfThree {
 
     /***
-     * 给定一个整数，写一个函数来判断它是否是 3 的幂次方。
+     * 给定一个整数，写一个函数来判断它是否是 3的幂次方。
      * 示例 1:
      * 输入: 27
      * 输出: true

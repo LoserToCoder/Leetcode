@@ -3,8 +3,8 @@ package com.leetcode.doublespoints;
 public class SubarrayProductLessThanK {
 
     /**
-     * 给定一个正整数数组 nums。
-     * 找出该数组内乘积小于 k 的连续的子数组的个数。
+     * 给定一个正整数数组nums。
+     * 找出该数组内乘积小于k的连续的子数组的个数。
      * 示例 1:
      * 输入: nums = [10,5,2,6], k = 100
      * 输出: 8

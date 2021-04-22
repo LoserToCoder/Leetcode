@@ -2,9 +2,9 @@ package com.leetcode.design;
 
 
 /**
- * 给定多个 words，words[i] 的权重为 i 。
- * 设计一个类 WordFilter 实现函数WordFilter.f(String prefix, String suffix)。
- * 这个函数将返回具有前缀 prefix 和后缀suffix 的词的最大权重。如果没有这样的词，返回 -1。
+ * 给定多个words，words[i]的权重为i。
+ * 设计一个类WordFilter实现函数WordFilter.f(String prefix, String suffix)。
+ * 这个函数将返回具有前缀prefix和后缀suffix的词的最大权重。如果没有这样的词，返回 -1。
  * 例子:
  * 输入:
  * WordFilter(["apple"])

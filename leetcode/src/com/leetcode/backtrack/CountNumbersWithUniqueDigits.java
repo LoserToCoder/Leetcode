@@ -3,7 +3,7 @@ package com.leetcode.backtrack;
 public class CountNumbersWithUniqueDigits {
 
     /***
-     给定一个非负整数 n，计算各位数字都不同的数字 x 的个数，其中 0 ≤ x < 10n 。
+     给定一个非负整数 n，计算各位数字都不同的数字 x 的个数，其中 0 ≤ x < 10n。
      示例:
      输入: 2
      输出: 91

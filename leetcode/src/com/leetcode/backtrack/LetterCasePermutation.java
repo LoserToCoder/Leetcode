@@ -17,8 +17,8 @@ public class LetterCasePermutation {
      * 输入: S = "12345"
      * 输出: ["12345"]
      * 注意：
-     * S 的长度不超过12。
-     * S 仅由数字和字母组成。
+     * S的长度不超过12。
+     * S仅由数字和字母组成。
      * 链接：https://leetcode-cn.com/problems/letter-case-permutation
      * 单分支递归
      * @param args

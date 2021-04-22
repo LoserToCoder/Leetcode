@@ -82,7 +82,7 @@ public class WordSearchII {
 
     /***
 
-     给定一个二维网格 board 和一个字典中的单词列表 words，
+     给定一个二维网格board和一个字典中的单词列表 words，
      找出所有同时在二维网格和字典中出现的单词。
      单词必须按照字母顺序，通过相邻的单元格内的字母构成，
      其中“相邻”单元格是那些水平相邻或垂直相邻的单元格。
@@ -96,9 +96,9 @@ public class WordSearchII {
      ['i','h','k','r'],
      ['i','f','l','v']
      ]
-     输出: ["eat","oath"]
+     输出:["eat","oath"]
      说明:
-     你可以假设所有输入都由小写字母 a-z 组成。
+     你可以假设所有输入都由小写字母 a-z组成。
      链接：https://leetcode-cn.com/problems/word-search-ii
      提示:
      你需要优化回溯算法以通过更大数据量的测试。你能否早点停止回溯？

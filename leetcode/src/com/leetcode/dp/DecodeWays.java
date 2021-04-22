@@ -5,7 +5,7 @@ public class DecodeWays {
 
     /**
      *
-     * 一条包含字母 A-Z 的消息通过以下方式进行了编码：
+     * 一条包含字母A-Z 的消息通过以下方式进行了编码：
      *
      * 'A' -> 1
      * 'B' -> 2
@@ -15,20 +15,21 @@ public class DecodeWays {
      * 示例 1:
      * 输入: "12"
      * 输出: 2
-     * 解释: 它可以解码为 "AB"（1 2）或者 "L"（12）。
-     * 示例 2:
+     * 解释:它可以解码为 "AB"（1 2）或者 "L"（12）。
+     * 示例2:
      * 输入: "226"
      * 输出: 3
-     * 解释: 它可以解码为 "BZ" (2 26), "VF" (22 6), 或者 "BBF" (2 2 6) 。
+     * 解释:它可以解码为 "BZ" (2 26), "VF" (22 6), 或者 "BBF" (2 2 6) 。
      * 链接：https://leetcode-cn.com/problems/decode-ways
      * @param s
      * @return
      */
     public int numDecodings(String s) {
 
+        if(s==null||s.length()<1||s.charAt(0)=='0'){
+            return 0;
+        }
         int n=s.length();
-
-        if(n==1) return s.charAt(0) == '0' ? 0 : 1;
         int[] dp = new int[n + 1];
 
         dp[n] =1;
@@ -49,8 +50,23 @@ public class DecodeWays {
         return dp[0];
     }
 
-    public static void main(String[] args) {
-       String s= "1223";
+    public int numDecoding(String s) {
+        int n = s.length();
+        int[] dp = new int[n + 1];
+        dp[0]=1;
+        for(int i=1;i<=n;i++){
 
+            //f(n)=f(n-1)+f(n-2);
+            if(s.charAt(i-1)!='0'){ //f(n-1)
+                dp[i] = dp[i - 1];
+            }
+
+            //f(n-2)
+            if(i>=2&&(s.charAt(i-2)=='1'||s.charAt(i-2)=='2'&&s.charAt(i-1)<='6')){
+                dp[i] += dp[i - 2];
+            }
+
+        }
+        return dp[n];
     }
 }
