@@ -36,6 +36,7 @@ public class KthLargestElement {
      * https://www.lintcode.com/problem/5/
      */
     public int kthLargestElement(int k, int[] nums) {
-        return 0;
+        int pos = Partition.partition(nums, 0, nums.length - 1, nums.length - k);
+        return nums[pos];
     }
 }

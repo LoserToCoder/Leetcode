@@ -26,6 +26,14 @@ public class Median {
      * https://www.lintcode.com/problem/80/
      */
     public int median(int[] nums) {
-       return 0;
+        int partition = Partition.partition(nums, 0, nums.length - 1, (nums.length + 1) / 2 - 1);
+        return nums[partition];
     }
+
+    public static void main(String[] args) {
+        int[] nums = {4, 5, 1, 2, 3};
+        Median median = new Median();
+        System.out.println(median.median(nums));
+    }
+
 }
