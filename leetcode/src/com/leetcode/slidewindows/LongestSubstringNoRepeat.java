@@ -9,9 +9,8 @@ public class LongestSubstringNoRepeat {
         if (s.length() <= 1 || s == null) {
             return s.length();
         }
-        int[] map = new int[256];
+        int[] map = new int[128];
         Arrays.fill(map, -1);
-
         int maxLen = 0, pre = -1, cur = 0;
         for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);

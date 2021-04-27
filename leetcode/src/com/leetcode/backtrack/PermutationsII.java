@@ -39,7 +39,7 @@ public class PermutationsII {
         for(int i=0;i<nums.length;i++){
 
             if(visited[i]) continue;
-            // 写 !used[i - 1] 是因为 nums[i - 1] 在深度优先遍历的过程中刚刚被撤销选择
+            // 写 !visited[i - 1] 是因为 nums[i - 1] 在深度优先遍历的过程中刚刚被撤销选择
             if(i>0&&nums[i]==nums[i-1]&&!visited[i-1]) continue;
             s.add(nums[i]);
             visited[i]=true;

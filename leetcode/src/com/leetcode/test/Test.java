@@ -1,4 +1,8 @@
 package com.leetcode.test;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 public class Test {
 
 
@@ -17,36 +21,37 @@ public class Test {
         //FutureTask
         //ThreadPoolExecutor
         //CompletableFuture
-       StringBuilder sb = new StringBuilder();
-        sb.append("@@@@@");
-        System.out.println(sb.toString());
-        sb.delete(0, sb.length()-1);
-        System.out.println(sb.toString());
-        Test test = new Test();
-        int []nums={16,16,18,24,30,32};
-        int target=48;
-        for(int num:nums){
-            int idx = test.binarySearch(target - num, nums);
-            System.out.println(idx);
-        }
+
 
 
     }
 
-    private int binarySearch(int key,int []nums){
+    public int largestRectangleArea(int[] heights) {
+        int ans = 0;
+        Deque<Integer> stack = new ArrayDeque<>();
+        for(int i=0;i<heights.length;i++){
 
-        int low=0;
-        int high=nums.length-1;
-        while(low<high){
-            int mid=((high-low)>>1)+low;
+            while (!stack.isEmpty() && heights[stack.peek()] > heights[i]) {
 
-            if(key>nums[mid]){
-                low=mid+1;
+                int j = stack.pop();
+                if(stack.isEmpty()){
+                    ans = Math.max(ans,i*heights[j]);
+                }else{
+                    ans = Math.max(ans, (i - stack.peek() - 1) * heights[j]);
+                }
+            }
+            stack.push(i);
+        }
+        while (!stack.isEmpty()){
+
+            int j = stack.pop();
+            if(stack.isEmpty()){
+                ans = Math.max(ans, heights[j] * heights.length);
             }else{
-                high=mid;
+                ans = Math.max(ans, (heights.length- stack.peek() - 1) * heights[j]);
             }
         }
-        return nums[low]==key?low:-1;
+        return ans;
     }
 
 

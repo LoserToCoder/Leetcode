@@ -62,7 +62,7 @@ public class PermutationChar {
 
     public static void main(String[] args) {
 
-        String s = "liming";
+        String s = "algorithm";
 
         PermutationChar permutationChar = new PermutationChar();
         System.out.println(permutationChar.permutation(s));

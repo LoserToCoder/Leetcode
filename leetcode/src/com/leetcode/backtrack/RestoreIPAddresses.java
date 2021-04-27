@@ -55,7 +55,7 @@ public class RestoreIPAddresses {
           }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
 
         RestoreIPAddresses restoreIPAddresses = new RestoreIPAddresses();
         String []ips={"19216811","25525511135","1111318633","1123411331","111135746","18248107165","106131216","4795162193","1111329129"};
