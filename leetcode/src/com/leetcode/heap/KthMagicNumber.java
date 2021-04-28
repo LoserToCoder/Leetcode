@@ -35,6 +35,11 @@ public class KthMagicNumber {
     }
 
 
+    /**
+     * 小根堆
+     * @param k
+     * @return
+     */
     public int getKthMagicNumberByHeap(int k) {
         PriorityQueue<Long> pq = new PriorityQueue<>();
         pq.add(1L);
