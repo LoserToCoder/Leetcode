@@ -26,6 +26,25 @@ public class Test {
 
     }
 
+
+    public boolean judgeSquareSum(int c) {
+
+        int n =(int)Math.sqrt(c);
+        for(int i=n;i>=1;i--){
+
+            int v = c-i*i;
+            if(v==0||isSquare(v)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean isSquare(int v){
+        int k = (int) Math.sqrt(v);
+        return k*k ==v;
+    }
+
     public int largestRectangleArea(int[] heights) {
         int ans = 0;
         Deque<Integer> stack = new ArrayDeque<>();
