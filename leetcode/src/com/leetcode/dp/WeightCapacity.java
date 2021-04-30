@@ -47,9 +47,9 @@ public class WeightCapacity {
 
     public static void main(String[] args) {
 
-        int[] weights = {1, 5, 16, 11,9};
+        int[] weights = {3,4,8,5};
         WeightCapacity weightCapacity = new WeightCapacity();
-        System.out.println(weightCapacity.weightCapacity(weights,24));
+        System.out.println(weightCapacity.weightCapacity(weights,10));
     }
 }
 
