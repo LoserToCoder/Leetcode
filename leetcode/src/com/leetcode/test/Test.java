@@ -2,6 +2,7 @@ package com.leetcode.test;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.PriorityQueue;
 
 public class Test {
 
@@ -21,7 +22,6 @@ public class Test {
         //FutureTask
         //ThreadPoolExecutor
         //CompletableFuture
-
 
 
     }
@@ -73,5 +73,27 @@ public class Test {
         return ans;
     }
 
+    public int[] smallestK(int[] arr, int k) {
+        if(arr==null||arr.length<k){
+            return arr;
+        }
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(k,(p,q)->{return q - p;});
+        for(int element:arr){
+
+            if (priorityQueue.size() < k) {
+                priorityQueue.offer(element);
+            }else{
+                if(element< priorityQueue.peek()){
+                    priorityQueue.poll();
+                    priorityQueue.offer(element);
+                }
+            }
+        }
+        int[] ret = new int[k];
+        for(int i=0;i<k;i++){
+            ret[i] = priorityQueue.poll();
+        }
+        return ret;
+    }
 
 }
