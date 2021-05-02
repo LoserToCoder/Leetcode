@@ -23,6 +23,7 @@ public class Test {
         //ThreadPoolExecutor
         //CompletableFuture
 
+        System.out.println('a'!=' ');
 
     }
 
