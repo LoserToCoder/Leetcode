@@ -1,6 +1,6 @@
 package com.leetcode.tree;
 
-public class KthSmallest {
+public class KthBinaryTree {
 
     /***
      * 给定一个二叉搜索树，编写一个函数kthSmallest来查找其中第k个最小的元素。
@@ -70,7 +70,7 @@ public class KthSmallest {
         }
     }
 
-   class TreeNode {
+    class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
@@ -78,6 +78,59 @@ public class KthSmallest {
         TreeNode(int val) {
             this.val = val;
         }
+    }
+
+    /**
+     * 给定一棵二叉搜索树，请找出其中第k大的节点。
+     *
+     *  
+     *
+     * 示例 1:
+     *
+     * 输入: root = [3,1,4,null,2], k = 1
+     *    3
+     *   / \
+     *  1   4
+     *   \
+     *    2
+     * 输出: 4
+     * 示例 2:
+     *
+     * 输入: root = [5,3,6,2,4,null,null,1], k = 3
+     *        5
+     *       / \
+     *      3   6
+     *     / \
+     *    2   4
+     *   /
+     *  1
+     * 输出: 4
+     *
+     * 链接：https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof
+     * @param root
+     * @param k
+     * @return
+     */
+    public int kthLargest(TreeNode root, int k) {
+       return kthLargestResult(root,k).val;
+    }
+
+    public Result kthLargestResult(TreeNode node,int k){
+
+        if(node==null) return new Result(false, 0);
+
+        Result rd = kthLargestResult(node.right,k);
+        if(rd.found){
+            return rd;
+        }
+        if(rd.val==k-1){
+            return new Result(true, node.val);
+        }
+        Result ld = kthLargestResult(node.left, k - rd.val - 1);
+        if(ld.found){
+            return new Result(true, ld.val);
+        }
+        return new Result(false, rd.val + ld.val + 1);
     }
 
     public static void main(String[] args) {
