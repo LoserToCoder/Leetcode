@@ -1,6 +1,7 @@
 package com.leetcode.test;
 
 import java.util.ArrayDeque;
+import java.util.Arrays;
 import java.util.Deque;
 import java.util.PriorityQueue;
 
@@ -23,28 +24,10 @@ public class Test {
         //ThreadPoolExecutor
         //CompletableFuture
 
-        System.out.println('a' != ' ');
-
     }
 
 
-    public boolean judgeSquareSum(int c) {
 
-        int n = (int) Math.sqrt(c);
-        for (int i = n; i >= 1; i--) {
-
-            int v = c - i * i;
-            if (v == 0 || isSquare(v)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public boolean isSquare(int v) {
-        int k = (int) Math.sqrt(v);
-        return k * k == v;
-    }
 
     public int largestRectangleArea(int[] heights) {
         int ans = 0;
@@ -98,78 +81,5 @@ public class Test {
         }
         return ret;
     }
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
-
-    public boolean isValidBST(TreeNode root) {
-
-        Deque<TreeNode> queue = new ArrayDeque<>();
-        queue.add(root);
-        while (!queue.isEmpty()) {
-
-            TreeNode node = queue.poll();
-            TreeNode predecessorNode = predecessor(node);
-            if(predecessorNode!=null&&predecessorNode.val>node.val){
-                return false;
-            }
-            TreeNode successorNode = successor(node);
-            if(successorNode!=null&&successorNode.val< node.val){
-                return false;
-            }
-            if(node.left!=null){
-                queue.offer(node.left);
-            }
-            if(node.right!=null){
-                queue.offer(node.right);
-            }
-        }
-        return true;
-    }
-
-    private TreeNode successor(TreeNode node) {
-        if (node.right == null) {
-            return null;
-        }
-        TreeNode curNode = node.right;
-
-        while (curNode.left!=null) {
-            curNode =curNode.left;
-        }
-        return curNode;
-    }
-
-    private TreeNode predecessor(TreeNode node) {
-        if(node.left ==null){
-            return null;
-        }
-        TreeNode curNode = node.left;
-
-        while (curNode.right!=null){
-            curNode = curNode.right;
-        }
-        return curNode;
-    }
-
-
-
-
-    private boolean isValidBST(TreeNode node, long min, long max) {
-        if(node==null){
-            return true;
-        }
-        if(node.val<=min||node.val>=max){
-            return false;
-        }
-        return isValidBST(node.left, min, node.val) && isValidBST(node.right, node.val, max);
-    }
-
 
 }
