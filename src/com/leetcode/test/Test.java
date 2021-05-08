@@ -1,9 +1,6 @@
 package com.leetcode.test;
 
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.Deque;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class Test {
 
@@ -23,10 +20,26 @@ public class Test {
         //FutureTask
         //ThreadPoolExecutor
         //CompletableFuture
+        new Test().findRepeatedDnaSequences("AAAAAAAAAAA");
 
     }
 
+    public List<String> findRepeatedDnaSequences(String s) {
+        int len = s.length();
+        Map<String, Integer> map = new HashMap<>();
 
+        for(int i=0;i+10<=len;i++){
+            String sub = s.substring(i,i+10);
+            map.put(sub, map.getOrDefault(sub, 0) + 1);
+        }
+        List<String> ret = new ArrayList<>();
+        for(Map.Entry<String,Integer> entry:map.entrySet()){
+            if(entry.getValue()>1){
+                ret.add(entry.getKey());
+            }
+        }
+        return ret;
+    }
 
 
     public int largestRectangleArea(int[] heights) {
