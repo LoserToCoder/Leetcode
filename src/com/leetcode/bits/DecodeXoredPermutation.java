@@ -1,5 +1,8 @@
 package com.leetcode.bits;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DecodeXoredPermutation {
 
     /**
@@ -53,4 +56,50 @@ public class DecodeXoredPermutation {
         return perm;
 
     }
+
+    /**
+     * @param s
+     * @return
+     */
+
+    List<String> ret = new ArrayList<>();
+    public String[] permutation(String s) {
+        int len = s.length();
+        boolean[] used = new boolean[len];
+        StringBuilder sb = new StringBuilder();
+        backtrack(s,sb,used);
+        int n =ret.size();
+        String[] results = new String[n];
+        ret.toArray(results);
+        return results;
+    }
+
+    public void backtrack(String s,StringBuilder sb,boolean [] used) {
+
+        if(sb.length()==s.length()){
+            ret.add(sb.toString());
+            return;
+        }
+
+        for(int i=0;i<s.length();i++){
+
+            if(used[i]){
+                continue;
+            }
+            used[i]=true;
+            sb.append(s.charAt(i));
+            backtrack(s, sb, used);
+            used[i]=false;
+            sb.deleteCharAt(sb.length() - 1);
+        }
+
+    }
+
+    public static void main(String[] args) {
+
+        new DecodeXoredPermutation().permutation("suvyls");
+
+    }
+
+
 }

@@ -1,6 +1,7 @@
 package com.leetcode.backtrack;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -25,6 +26,7 @@ public class PermutationsII {
      */
     public List<List<Integer>> permuteUnique(int[] nums) {
         int n=nums.length;
+        Arrays.sort(nums);
         backtrack(nums,new ArrayList<>(n),new boolean[n]);
         return permutes;
     }
