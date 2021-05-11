@@ -43,14 +43,12 @@ public class UTF8Validation {
      * @return
      */
     public boolean validUtf8(int[] data) {
-
-       return false;
+        System.out.println(new Object().hashCode());
+        return false;
     }
 
+    class DFA{
 
-
-    public static void main(String[] args) {
-        new UTF8Validation().validUtf8(new int[]{10});
     }
 
 }
