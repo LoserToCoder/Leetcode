@@ -20,7 +20,7 @@ public class Test {
         //FutureTask
         //ThreadPoolExecutor
         //CompletableFuture
-        new Test().findRepeatedDnaSequences("AAAAAAAAAAA");
+        System.out.println("车主现金劵是激励车主接单的一种营销方式,同时也是公司倡导低碳生活方式. 共享更多的车位减少排放量,车主通过参见活动或者接单达标得到相应的现金劵,然后现金劵激活后,可在符合条件的行程订单中核销.".length());
 
     }
 
