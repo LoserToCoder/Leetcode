@@ -1,6 +1,7 @@
 package com.leetcode.backtrack;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class SubSets {
@@ -50,5 +51,38 @@ public class SubSets {
         sub.remove(sub.size() - 1);
         //不选择
         backtrack(results,sub,nums,i+1);
+    }
+
+
+    private List<List<Integer>> results = new ArrayList<>();
+    public List<List<Integer>> subsetsWithDup(int[] nums) {
+        Arrays.sort(nums);
+        backtrack(new ArrayList<>(),nums,0);
+        return results;
+    }
+
+    private void backtrack(List<Integer> sub,int []nums,int i){
+
+        if(i>=nums.length){
+            results.add(new ArrayList<>(sub));
+            return;
+        }
+        sub.add(nums[i]);
+        backtrack(sub,nums,i+1);
+        sub.remove(sub.size() - 1);
+        while (i+1<nums.length&&nums[i]==nums[i+1]){
+            i++;
+        }
+        backtrack(sub,nums,i+1);
+    }
+
+    public static void main(String[] args) {
+        new SubSets().subsetsWithDup(new int[]{1, 2, 3, 2});
+        /**
+         *
+         [[1,2,2,3],[1,2,2],[1,2,3],[1,2],[1,3],[1],
+          [2,2,3],[2,2],[2,3],[2],
+           [3],[]]
+         */
     }
 }
