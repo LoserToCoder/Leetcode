@@ -28,6 +28,5 @@ public class PeakElement {
 
         new PeakElement().findPeakElement(new int[]{1, 3, 4, 7, 13, 19, 17, 13, 8, 3, 1});
 
-
     }
 }
