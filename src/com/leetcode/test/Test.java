@@ -86,29 +86,25 @@ public class Test {
         return ans;
     }
 
-    public int[] smallestK(int[] arr, int k) {
-        if (arr == null || arr.length < k) {
-            return arr;
-        }
-        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(k, (p, q) -> {
-            return q - p;
-        });
-        for (int element : arr) {
 
-            if (priorityQueue.size() < k) {
-                priorityQueue.offer(element);
-            } else {
-                if (element < priorityQueue.peek()) {
-                    priorityQueue.poll();
-                    priorityQueue.offer(element);
-                }
-            }
+    /**
+     * 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
+     * @param s
+     * @return
+     */
+    public int lengthOfLongestSubstring(String s) {
+        int[] alphabets = new int[128];
+        Arrays.fill(alphabets,-1);
+        int len = s.length();
+        int maxLen = 0;
+        int prev =-1;
+        for(int i=0;i<len;i++){
+            char c = s.charAt(i);
+            prev = Math.max(prev, alphabets[c]);
+            alphabets[c]=i;
+            maxLen = Math.max(maxLen, i - prev);
         }
-        int[] ret = new int[k];
-        for (int i = 0; i < k; i++) {
-            ret[i] = priorityQueue.poll();
-        }
-        return ret;
+        return maxLen;
     }
 
 }
