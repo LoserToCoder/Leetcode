@@ -1,6 +1,9 @@
 package com.leetcode.test;
 
+import com.sun.tools.corba.se.idl.toJavaPortable.DefaultFactory;
+
 import java.util.*;
+import java.util.concurrent.*;
 
 public class Test {
 
@@ -15,7 +18,9 @@ public class Test {
      * IndexOutOfBoundsException
      */
 
-    public static void main(String[] args) {
+    private static final Integer NCPU = Runtime.getRuntime().availableProcessors();
+
+    public static void main(String[] args)throws Exception {
 
         //FutureTask
         //ThreadPoolExecutor
@@ -23,21 +28,19 @@ public class Test {
 
         /**
          * static 语句块，只能访问到定义在 static 语句块之前的变量
-         */
+        */
+        Thread t1 = new Thread(()->{
+
+            Thread.yield();
+        });
+        Thread t2 = new Thread(()->{
+            Thread.yield();
+        });
 
 
-        ThreadLocal<String> threadLocal = new ThreadLocal<>();
-        ThreadLocal<String> inheritableThreadLocal = new InheritableThreadLocal<>();
-        threadLocal.set("父类数据:threadLocal");
-        inheritableThreadLocal.set("父类数据:inheritableThreadLocal");
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("子线程获取父类threadLocal数据：" + threadLocal.get());
-                System.out.println("子线程获取父类inheritableThreadLocal数据：" + inheritableThreadLocal.get());
-            }
-        }).start();
+
+
     }
 
     public List<String> findRepeatedDnaSequences(String s) {
