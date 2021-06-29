@@ -4,7 +4,7 @@ public class IntersectionOfTwoLinked {
 
 
     /**
-     *
+     *  要保证步伐一致
      * @param headA
      * @param headB
      * @return
