@@ -1,6 +1,6 @@
 package com.leetcode.bits;
 
-public class SingleNumber {
+public class  SingleNumber {
     
     /*
     定一个整数数组nums，其中恰好有两个元素只出现一次，其余所有元素均出现两次。 找出只出现一次的那两个元素。你可以按 任意顺序 返回答案。
