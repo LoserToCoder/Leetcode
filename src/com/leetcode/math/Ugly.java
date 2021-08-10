@@ -30,7 +30,7 @@ public class Ugly {
 
     提示：
 
-    -231 <= n <= 231 - 1
+    -2^31 <= n <= 2^31 - 1
 
      链接：https://leetcode-cn.com/problems/ugly-number
      */
