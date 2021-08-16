@@ -60,4 +60,43 @@ public class LongestIncreasingSubsequence {
         return maxAns;
     }
 
+
+    /**
+     *  关键之处:需要维护一个数组 tails tails[i] 代表子序列长度为i+1的最小尾数
+     *
+     * 尾数越小,越往后的话,这个子序列递增达到最大的几率就大
+     * @param nums
+     * @return
+     */
+    public int lengthOfLISOptimizer(int[] nums) {
+
+        int n = nums.length;
+        int[] tails = new int[n];
+
+        int ans = 0;//保存当前最大子序列长度
+
+        for (int num : nums) {
+
+            int i=0, j = ans;
+            while (i < j) {
+
+                int m = i+((j-i)>>1);
+
+                if(tails[m]<num){
+                    i = m+1;
+                }else{
+                    j = m;
+                }
+
+            }
+            tails[i] = num;
+
+            //while 循环里出来,i==j,如果此时j==ans的话
+            if(j==ans) ans++;
+        }
+
+        return ans;
+
+    }
+
 }
