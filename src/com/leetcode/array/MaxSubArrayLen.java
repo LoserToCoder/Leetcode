@@ -35,6 +35,7 @@ public class MaxSubArrayLen {
      *
      * 进阶:
      * 你能使时间复杂度在 O(n) 内完成此题吗?
+     * 链接:🔗https://leetcode-cn.com/problems/maximum-size-subarray-sum-equals-k/
      * @param nums
      * @param k
      * @return

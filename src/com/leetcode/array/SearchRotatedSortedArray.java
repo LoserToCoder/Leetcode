@@ -70,6 +70,7 @@ public class SearchRotatedSortedArray {
             //前半段
             if(nums[mid]>nums[lo]){
 
+                //[lo,mid)
                 //在前半段的范围内
                 if(target>=nums[lo] && target<nums[mid]){
                      hi =mid-1;
@@ -80,7 +81,7 @@ public class SearchRotatedSortedArray {
 
             }else{
                 //中点落到后半段
-
+                //(mid,hi]
                 if(target>nums[mid] && target<=nums[hi]){
                     lo = mid+1;
                 }else{
