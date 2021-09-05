@@ -24,6 +24,23 @@ public class Test {
     private static final Integer NCPU = Runtime.getRuntime().availableProcessors();
 
 
+   static class Money{
+
+        String desc;
+
+        Double money;
+
+    }
+
+    public static void main(String[] args) {
+
+
+        ArrayList<Integer> list = new ArrayList<>();
+        for(int i=0;i<Integer.MAX_VALUE;i++){
+            list.add(i);
+        }
+
+    }
 
     /*static 语句块，只能访问到定义在 static 语句块之前的变量*/
 
@@ -94,7 +111,7 @@ public class Test {
         return maxLen;
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
 
         URL[] urLs = Launcher.getBootstrapClassPath().getURLs();
 
@@ -145,7 +162,7 @@ public class Test {
         }
         return null;
     }
-
+*/
 
 
 
