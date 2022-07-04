@@ -17,12 +17,17 @@ public class ReverseList {
      */
     public ListNode reverseList(ListNode head) {
 
+        //头插法
         ListNode prev=null;
         ListNode cur=head;
         while(cur!=null){
+            //将当前节点下一个节点引用存储
             ListNode curTmp=cur.next;
+            //当前节点的下一个节点应该是上一个节点的引用指向
             cur.next=prev;
+            // 让后再将当前节点指向prev
             prev=cur;
+            // 当前节点指向curTmp
             cur=curTmp;
         }
         return prev;
