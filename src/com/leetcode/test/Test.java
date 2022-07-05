@@ -111,58 +111,8 @@ public class Test {
         return maxLen;
     }
 
-    /*public static void main(String[] args) {
 
-        URL[] urLs = Launcher.getBootstrapClassPath().getURLs();
 
-        System.out.println("启动类加载器");
-        for(URL url:urLs){
-            System.out.println("=======> "+url.toExternalForm());
-        }
-
-        printClassLoader("扩展类加载器",Test.class.getClassLoader().getParent());
-
-        printClassLoader("应用类加载器",Test.class.getClassLoader());
-
-    }
-
-    private static void printClassLoader(String name,ClassLoader classLoader){
-
-        if(classLoader!=null){
-            System.out.println(name+" classloader ==>"+classLoader.toString());
-            printURLForClassloader(classLoader);
-        }
-
-    }
-
-    private static void printURLForClassloader(ClassLoader classLoader) {
-
-        Object ucp = insightField(classLoader, "ucp");
-        Object path = insightField(ucp, "path");
-        List paths =(List) path;
-        for(Object p:paths){
-            System.out.println(" ====> "+p.toString());
-        }
-
-    }
-
-    private static Object insightField(Object object,String name){
-        Field f = null;
-        try {
-
-            if(object instanceof URLClassLoader){
-                f = URLClassLoader.class.getDeclaredField(name);
-            }else {
-                f = object.getClass().getDeclaredField(name);
-            }
-            f.setAccessible(true);
-            return f.get(object);
-        }catch (Exception ex){
-            ex.printStackTrace();
-        }
-        return null;
-    }
-*/
 
 
 

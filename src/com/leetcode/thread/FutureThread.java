@@ -29,7 +29,7 @@ public class FutureThread {
             futureList.add(future);
         }
         for(Future<Integer> async:futureList){
-            System.out.println(async.get());
+            async.get();
         }
         System.out.println("耗时:"+(System.currentTimeMillis()-t1)+"ms");
         futureList.clear();
@@ -40,7 +40,7 @@ public class FutureThread {
             futureList.add(future);
         }
         for(Future<Integer> async:futureList){
-            System.out.println(async.get());
+           async.get();
         }
         System.out.println("耗时:"+(System.currentTimeMillis()-t1)+"ms");
         executorService.shutdownNow();
