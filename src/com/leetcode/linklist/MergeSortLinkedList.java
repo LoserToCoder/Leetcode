@@ -27,6 +27,7 @@ public class MergeSortLinkedList {
 
             node = pq.poll();
             listNode.next = node;
+            listNode = listNode.next;
             if(node.next!=null){
                 pq.offer(node.next);
             }

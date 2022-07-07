@@ -1,6 +1,8 @@
 package com.leetcode.linklist;
 
 
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 class ListNode{
     int val;
@@ -70,6 +72,19 @@ public class MergeSortedList {
         node.next=node4;
         node4.next=node5;
         System.out.println(new MergeSortedList().mergeTwoLists(node1,node));
+
+        Queue<ListNode> pq = new PriorityQueue<>((p, q) -> p.val - q.val);
+        pq.offer(node);
+        pq.offer(node5);
+        pq.offer(node2);
+        pq.offer(node4);
+        while (!pq.isEmpty()){
+
+            ListNode poll = pq.poll();
+            System.out.println(poll.val);
+        }
     }
+
+
 
 }
