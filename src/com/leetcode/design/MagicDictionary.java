@@ -27,64 +27,61 @@ import java.util.*;
  */
 class MagicDictionary {
 
+    class Trie {
+        boolean isFinished;
+        Trie[] child;
 
-    private Map<String,Integer> map;
+        public Trie() {
+            isFinished = false;
+            child = new Trie[26];
+        }
+    }
+    Trie root;
 
-    private Set<String> dic;
-
-    /** Initialize your data structure here. */
     public MagicDictionary() {
-        map = new HashMap<>();
-        dic = new HashSet<>();
+        root = new Trie();
     }
 
-
-    public List<String> generalize(String word) {
-
-        List<String> dic = new ArrayList<>();
-
-        char[] cn = word.toCharArray();
-
-        for(int i=0;i<word.length();i++){
-
-            char letter=cn[i];
-            cn[i] = '*';
-            dic.add(new String(cn));
-            cn[i]=letter;
-        }
-        return dic;
-    }
-
-
-    /** Build a dictionary through a list of words */
-    public void buildDict(String[] dict) {
-
-        for(String word:dict){
-
-            dic.add(word);
-
-            for (String magic : generalize(word)) {
-
-                map.put(magic, map.getOrDefault(magic,0) + 1);
+    public void buildDict(String[] dictionary) {
+        for (String word : dictionary) {
+            Trie cur = root;
+            for (int i = 0; i < word.length(); ++i) {
+                char ch = word.charAt(i);
+                int idx = ch - 'a';
+                if (cur.child[idx] == null) {
+                    cur.child[idx] = new Trie();
+                }
+                cur = cur.child[idx];
             }
-
+            cur.isFinished = true;
         }
-
     }
-    
-    /** Returns if there is any word in the trie that equals to the given word after modifying exactly one character */
-    public boolean search(String word) {
 
-        for (String magic : generalize(word)) {
+    public boolean search(String searchWord) {
+        return dfs(searchWord, root, 0, false);
+    }
 
-            int c = map.getOrDefault(magic, 0);
-            if(c>1||c==1&&!dic.contains(word)) return true;
-            //c=1时候,要看看是否在dic中也包含word
-
+    private boolean dfs(String searchWord, Trie node, int pos, boolean modified) {
+        if (pos == searchWord.length()) {
+            return modified && node.isFinished;
+        }
+        int idx = searchWord.charAt(pos) - 'a';
+        if (node.child[idx] != null) {
+            if (dfs(searchWord, node.child[idx], pos + 1, modified)) {
+                return true;
+            }
+        }
+        if (!modified) {
+            for (int i = 0; i < 26; ++i) {
+                if (i != idx && node.child[i] != null) {
+                    if (dfs(searchWord, node.child[i], pos + 1, true)) {
+                        return true;
+                    }
+                }
+            }
         }
         return false;
     }
-
 
     public static void main(String[] args) {
 
