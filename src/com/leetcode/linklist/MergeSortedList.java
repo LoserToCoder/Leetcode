@@ -4,33 +4,7 @@ package com.leetcode.linklist;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-class ListNode{
-    int val;
-    ListNode next;
-    ListNode(int x){this.val=x;}
 
-    ListNode(int x,ListNode next){
-        this.val = x;
-        this.next = next;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb=new StringBuilder();
-        ListNode p=this.next;
-        sb.append("["+val);
-        sb.append(",");
-        while(p!=null){
-            sb.append(p.val);
-            p=p.next;
-            if(p!=null){
-                sb.append(",");
-            }
-        }
-        sb.append("]");
-        return sb.toString();
-    }
-}
 public class MergeSortedList {
     /**
     将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
