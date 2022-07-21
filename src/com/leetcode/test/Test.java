@@ -1,11 +1,4 @@
 package com.leetcode.test;
-
-
-import sun.misc.Launcher;
-
-import java.lang.reflect.Field;
-import java.net.URL;
-import java.net.URLClassLoader;
 import java.util.*;
 
 public class Test {
@@ -20,27 +13,6 @@ public class Test {
      * ArithmeticException
      * IndexOutOfBoundsException
      */
-
-    private static final Integer NCPU = Runtime.getRuntime().availableProcessors();
-
-
-   static class Money{
-
-        String desc;
-
-        Double money;
-
-    }
-
-    public static void main(String[] args) {
-
-
-        ArrayList<Integer> list = new ArrayList<>();
-        for(int i=0;i<Integer.MAX_VALUE;i++){
-            list.add(i);
-        }
-
-    }
 
     /*static 语句块，只能访问到定义在 static 语句块之前的变量*/
 
