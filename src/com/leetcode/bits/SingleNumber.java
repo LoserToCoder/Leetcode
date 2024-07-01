@@ -1,5 +1,4 @@
 package com.leetcode.bits;
-
 public class  SingleNumber {
     
     /*

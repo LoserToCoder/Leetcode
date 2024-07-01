@@ -28,68 +28,18 @@ public class ValidBST {
     链接：https://leetcode-cn.com/problems/legal-binary-search-tree-lcci
      */
 
+    private int pre = Integer.MIN_VALUE;
     public boolean isValidBST(TreeNode root) {
-        return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
-    }
-    private boolean isValidBST(TreeNode node, long min, long max) {
-        if(node==null){
-            return true;
-        }
-        if(node.val<=min||node.val>=max){
+        if(root==null) return true;
+        if(!isValidBST(root.left)){
             return false;
         }
-        return isValidBST(node.left, min, node.val) && isValidBST(node.right, node.val, max);
+        if(root.val<pre){
+            return false;
+        }
+        pre = root.val;
+        return isValidBST(root.right);
     }
 
-
-    public boolean isValidBSTLevel(TreeNode root) {
-
-        Deque<TreeNode> queue = new ArrayDeque<>();
-        queue.add(root);
-        while (!queue.isEmpty()) {
-
-            TreeNode node = queue.poll();
-            TreeNode predecessorNode = predecessor(node);
-            if(predecessorNode!=null&&predecessorNode.val>node.val){
-                return false;
-            }
-            TreeNode successorNode = successor(node);
-            if(successorNode!=null&&successorNode.val< node.val){
-                return false;
-            }
-            if(node.left!=null){
-                queue.offer(node.left);
-            }
-            if(node.right!=null){
-                queue.offer(node.right);
-            }
-        }
-        return true;
-    }
-
-
-    private TreeNode successor(TreeNode node) {
-        if (node.right == null) {
-            return null;
-        }
-        TreeNode curNode = node.right;
-
-        while (curNode.left!=null) {
-            curNode =curNode.left;
-        }
-        return curNode;
-    }
-
-    private TreeNode predecessor(TreeNode node) {
-        if(node.left ==null){
-            return null;
-        }
-        TreeNode curNode = node.left;
-
-        while (curNode.right!=null){
-            curNode = curNode.right;
-        }
-        return curNode;
-    }
 
 }

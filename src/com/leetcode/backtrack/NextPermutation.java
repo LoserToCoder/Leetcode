@@ -1,7 +1,4 @@
 package com.leetcode.backtrack;
-
-import java.util.Arrays;
-
 public class NextPermutation {
 
     public void nextPermutation(int[] nums) {

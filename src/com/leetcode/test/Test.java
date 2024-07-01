@@ -83,6 +83,44 @@ public class Test {
         return maxLen;
     }
 
+    public static String solve (String s, String t) {
+        if(s.length()==0||t.length()==0){
+            return s.length()==0 ? t:s;
+        }
+        // write code here
+        int n = Math.max(s.length(),t.length());
+        int [] nums = new int[n+1];
+        int i = s.length()-1,j=t.length()-1;
+        while(i>=0 || j>=0){
+
+            int a = 0 ,b=0;
+            if(i>=0) {
+                a = s.charAt(i)-'0';
+                i--;
+            }
+
+            if(j>=0){
+                b = t.charAt(j)-'0';
+                j--;
+            }
+            nums[n] +=(a+b)%10;
+            nums[n-1]=(a+b)/10;
+            n--;
+        }
+        StringBuilder sb = new StringBuilder();
+        for(int k=0;k<nums.length;k++){
+            if(k==0 && nums[k]==0){
+                continue;
+            }
+            sb.append(nums[k]);
+        }
+        return sb.toString();
+    }
+
+    public static void main(String[] args) {
+
+        solve("1","99");
+    }
 
 
 
