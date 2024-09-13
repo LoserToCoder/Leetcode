@@ -18,7 +18,7 @@ public class PeakElement {
              *    2. 也可能在临界点右边
              *
              */
-            if(nums[mid]>nums[mid+1])r=mid;
+            if(nums[mid]>nums[mid+1]) r=mid;
             else l=mid+1;
         }
         return l;

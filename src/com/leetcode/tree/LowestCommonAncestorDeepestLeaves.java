@@ -4,7 +4,7 @@ public class LowestCommonAncestorDeepestLeaves {
 
     /**
      *
-     * 给定一个根为 root 的二叉树，每个节点的深度是 该节点到根的最短距离 。
+     * 给定一个根为root的二叉树，每个节点的深度是 该节点到根的最短距离 。
      *
      * 如果一个节点在 整个树 的任意节点之间具有最大的深度，则该节点是 最深的 。
      *

@@ -1,5 +1,7 @@
 package com.leetcode.math;
 
+import java.util.TreeSet;
+
 public class StringMultiply {
 
     /**
@@ -49,5 +51,47 @@ public class StringMultiply {
             sb.append(nums[index++]);
         }
         return sb.toString();
+    }
+
+    public static int mySqrt(int x) {
+
+        if(x<1) return 0;
+        int left = 1,right = x;
+        while(right-left>1){
+
+            int mid = left+(right-left)/2;
+            if(mid*mid<x){
+                left = mid;
+            } else if(mid*mid>x){
+                right = mid;
+            } else {
+                return (int)mid;
+            }
+        }
+        return (int)left;
+    }
+
+    public static void main(String[] args) {
+        TreeSet<Integer> tree  = new TreeSet<>();
+        tree.add(10);
+        tree.add(-1);
+        tree.add(20);
+        tree.add(25);
+        tree.add(15);
+        System.out.println(tree.pollFirst());
+        System.out.println(tree.first());
+
+        System.out.println(tree.pollFirst());
+        System.out.println(tree.first());
+
+        System.out.println(tree.pollFirst());
+        System.out.println(tree.first());
+
+        System.out.println(tree.pollFirst());
+        System.out.println(tree.first());
+
+        System.out.println(tree.pollFirst());
+        System.out.println(tree.first());
+
     }
 }

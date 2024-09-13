@@ -1,5 +1,9 @@
 package com.leetcode.array;
 
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
 public class FindMinSortedArray {
 
     /**
@@ -36,13 +40,6 @@ public class FindMinSortedArray {
      */
     public int findMin(int[] nums) {
 
-        if(nums==null||nums.length<1){
-            throw new IllegalArgumentException();
-        }
-        int lb = 0, rb = nums.length - 1;
-        while (lb<rb){
-
-            int mid =lb+((rb-lb)>>1);
 
             /**
              * 由于此题是要求取最小值, mid和right比较
@@ -53,23 +50,61 @@ public class FindMinSortedArray {
              * nums[right]<=nums[mid] 则说明最小值处在 mid~right之间
              * nums[right]>nums[mid] 最小值处在left~mid之间
              */
-            if (nums[rb] > nums[mid]) {
-                rb = mid;
-            }else {
-                lb = mid+1;
+            int left = 0 ,right = nums.length-1;
+            while (left<right){
+                int mid = left+(right-left)/2;
+                // 如果中点位置  nums[mid]>nums[right] 说明 拐点在右侧,最小值在右侧 此时继续往右推进
+                if(nums[mid]>nums[right]){
+                    left = mid+1;
+                } else {
+                    /**
+                     * 不排除有重复元素
+                     * nums[mid]<nums[right] 说明在已经在拐点下侧了
+                     * right = mid-1;
+                     * nums[mid]==nums[right] 如果有重复元素的存在的话,可能还没有到拐点
+                     * 执行 right = mid-1 可能会错过最小值
+                     * 综合选择还是
+                     * right= right-1;
+                     */
+                    right = right-1;
+                }
             }
-        }
-        return nums[lb];
+
+            return nums[left];
 
     }
 
 
     public static void main(String[] args) {
-
         FindMinSortedArray findMinSortedArray = new FindMinSortedArray();
         int[] nums = {3, 4, 5, 1, 2};
         System.out.println(findMinSortedArray.findMin(nums));
 
+        int[] array = {4,2,1,2};
+        int i = minimizeMax(array,1);
+
+
+    }
+
+    public static int minimizeMax(int[] nums, int p) {
+
+        Arrays.sort(nums);
+
+        int n = nums.length,left = -1, right = nums[n-1]-nums[0];
+        while(left+1 < right) {
+
+            int mid = (left+right)>>1, cnt = 0;
+            for(int i=0;i<n-1;i++) {
+                if(nums[i+1]-nums[i]<=mid) {
+                    cnt++;
+                    i++;
+                }
+            }
+
+            if(cnt>=p) right = mid;
+            else left = mid;
+        }
+        return right;
 
     }
 }

@@ -1,6 +1,7 @@
 package com.leetcode.array;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class SpiralMatrix {
@@ -58,5 +59,52 @@ public class SpiralMatrix {
             left++;
         }
         return ans;
+    }
+
+    public static int[] spiralArray(int[][] array) {
+
+        int m = array.length, n = array[0].length;
+        int top = 0,  bottom = array.length-1;
+        int left = 0,  right = array[0].length-1;
+        int [] results = new int[m*n];
+        int index = 0;
+        while(top<=bottom && left<=right) {
+
+            // 向右
+            for(int i= left;i<=right;i++){
+                results[index++] = array[top][i];
+            }
+            top++;
+
+            // 向下
+            for(int i=top;i<=bottom;i++){
+                results[index++] = array[i][right];
+            }
+            right--;
+
+            if(left>right || top>bottom) break;
+
+            // 向左
+            for(int i = right;i>=left;i--){
+                results[index++] = array[bottom][i];
+            }
+            bottom--;
+
+            // 向上
+
+            for(int i = bottom;i>=top;i--) {
+                results[index++] = array[i][left];
+            }
+            left++;
+        }
+        return results;
+
+    }
+
+    public static void main(String[] args) {
+
+        int [][]array = {{1,2,3},{4,5,6},{7,8,9}};
+        int[] ints = spiralArray(array);
+        System.out.println(Arrays.toString(ints));
     }
 }

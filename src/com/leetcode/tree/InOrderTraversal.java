@@ -68,6 +68,7 @@ public class InOrderTraversal {
        List<Integer> traversal=new ArrayList<>();
        Stack<TreeNode> stack=new Stack<>();
        TreeNode cur=root;
+
        while(cur!=null||!stack.isEmpty()){
             
             if(cur!=null){ //不为null,继续左分支,压栈

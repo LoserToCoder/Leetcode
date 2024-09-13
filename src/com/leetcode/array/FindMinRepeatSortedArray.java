@@ -43,4 +43,19 @@ public class FindMinRepeatSortedArray {
 
     }
 
+    public int findMax(int[] nums) {
+        int l = 0, r = nums.length - 1;
+        while (l < r) {
+            int mid = l + ((r - l) >> 1);
+            if (nums[mid] > nums[l]) {
+                l = mid;
+            } else if (nums[mid] < nums[l]) {
+                r = mid - 1;
+            } else {
+                l++;
+            }
+        }
+        return nums[l];
+    }
+
 }

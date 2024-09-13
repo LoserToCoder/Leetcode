@@ -31,6 +31,8 @@ public class FindPeakElement {
         }
         int []ans ={0,0};
         ans[0] =array[L];
+
+
         int i=L;
         while(i<array.length){
             if(array[i]==ans[0]){

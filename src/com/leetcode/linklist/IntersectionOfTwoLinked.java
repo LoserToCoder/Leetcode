@@ -28,8 +28,18 @@ public class IntersectionOfTwoLinked {
             }else {
                 nodeB = headA;
             }
+
         }
         return nodeA;
+    }
+
+    /**
+     *  1. 判断两个链表相交  （两个链表尾节点是相同的）
+     *  2.  length(A) length(B)  让长的链表先走|length(A)-length(B)| 然后再同步走
+     */
+
+    public static void main(String[] args) {
+       // System.out.println(Math.p);
     }
 
 }

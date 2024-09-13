@@ -16,6 +16,7 @@ class ZeroEvenOdd {
     private Condition even=lock.newCondition();
 
     private Condition odd=lock.newCondition();
+
     private volatile AtomicInteger seqs = new AtomicInteger(0);
 
     private volatile  int status=0;

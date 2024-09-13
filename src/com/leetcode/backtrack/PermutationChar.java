@@ -62,11 +62,44 @@ public class PermutationChar {
 
     public static void main(String[] args) {
 
-        String s = "algorithm";
+      /*  String s = "algorithm";
 
         PermutationChar permutationChar = new PermutationChar();
-        System.out.println(permutationChar.permutation(s));
+        System.out.println(permutationChar.permutation(s));*/
 
+        PermutationChar permutationChar = new PermutationChar();
+
+        String permutation = permutationChar.getPermutation(8, 8590);
+        System.out.println(permutation);
+
+    }
+
+
+    private List<String> ans = new ArrayList<>();
+    public String getPermutation(int n, int k) {
+
+        dfs(n,new StringBuilder(),new boolean[n]);
+
+        return ans.get(k-1);
+
+    }
+    private void dfs(int n,StringBuilder sb, boolean[]used){
+
+        if(sb.length()==n){
+            ans.add(sb.toString());
+            return;
+        }
+
+        for(int i=0;i<n;i++){
+            if(used[i]){
+                continue;
+            }
+            sb.append(i+1);
+            used[i]= true;
+            dfs(n,sb,used);
+            used[i] = false;
+            sb.deleteCharAt(sb.length()-1);
+        }
     }
 
 

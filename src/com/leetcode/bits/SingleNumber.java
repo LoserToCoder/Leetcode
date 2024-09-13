@@ -8,20 +8,26 @@ public class  SingleNumber {
      */
     public int[] singleNumber(int[] nums) {
         int bitmask = 0;
-        for(int num:nums){
-            bitmask ^=num;
+        for (int num : nums) {
+            bitmask ^= num;
         }
         //bitmask &= -bitmask,保留最低位的1
         bitmask &= -bitmask;
         int[] ret = {0, 0};
-        for(int num:nums){
-            if((bitmask&num)!=0){
-                ret[0]^=num;
-            }else{
-                ret[1]^=num;
+        for (int num : nums) {
+            if ((bitmask & num) != 0) {
+                ret[0] ^= num;
+            } else {
+                ret[1] ^= num;
             }
         }
         return ret;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Integer.toBinaryString(32));
+        System.out.println(Integer.toBinaryString(-32));
+        System.out.println(32&-32);
     }
     
 }

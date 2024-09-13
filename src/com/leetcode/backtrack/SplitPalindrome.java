@@ -32,9 +32,12 @@ public class SplitPalindrome {
     public List<List<String>> partition(String s) {
         List<List<String>> results = new ArrayList<>();
         if(s==null||s.length()<1) return results;
+
         backtrack(results, new ArrayList<>(),s,0);
         return results;
     }
+
+
     private void backtrack(List<List<String>> results,List<String> cur,String s,int lo){
         if(lo==s.length()){
             results.add(cur);
